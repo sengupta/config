@@ -86,8 +86,8 @@ alias ga='git add'
 alias gs='git status'
 alias gd='git diff --word-diff=color'
 alias gc='git commit'
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset < %Cgreen%p%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gle="git log --graph --pretty=format:'%Cred%h%Creset < %Cgreen%p%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --numstat --summary"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset < %Cgreen%p%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" # Git log basic
+alias gle="git log --graph --pretty=format:'%Cred%h%Creset < %Cgreen%p%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --numstat --summary" # Git log extended
 alias gcm='git commit -m'
 alias gdc='git diff --cached --word-diff=color'
 alias gfa='git fetch --all'
@@ -96,6 +96,7 @@ alias gsb="git for-each-ref --count=45 --sort=-committerdate refs/heads/ --forma
 alias ghead='git symbolic-ref --short head'
 alias gmoh='git merge origin/$(ghead)' # Merge the remote branch at origin into the local branch
 alias gmuh='git merge upstream/$(ghead)' # Merge the remote branch at upstream into the local branch
+alias gref='git for-each-ref --sort=-committerdate refs/remotes/upstream/' # Show upstream refs sorted by committer date
 
 # Print the path
 alias path='echo -e ${PATH//:/\\n}'
