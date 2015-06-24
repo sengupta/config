@@ -23,12 +23,14 @@ nmap <leader>w :w!<cr>
 
 " Fast quit
 nmap <leader>q :q<cr>
+nmap <leader>Q :q!<cr>
 
 " Fast save and quit
 " nmap <leader>wq :wq<cr>
 
 " Fast quit all windows
 nmap <leader>a :qa<cr>
+nmap <leader>A :qa!<cr>
 
 " Toggle paste mode on and off
 map <leader>p :setlocal paste!<cr>
