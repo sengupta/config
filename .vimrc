@@ -107,7 +107,7 @@ autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 " Fold only Python files
-autocmd FileType python setlocal foldmethod=indent
+autocmd FileType python setlocal foldmethod=indent " textwidth=72
 
 " Get backspace to work normally, instead of escaping insert mode and
 " moving backward
