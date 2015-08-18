@@ -95,7 +95,13 @@ set expandtab
 " 1 tab = 4 spaces
 set shiftwidth=4
 set tabstop=4
-"
+
+" Pathogen
+execute pathogen#infect()
+
+" set autoindent
+" set smartindent
+
 " Enable filetype plugins
 if has("autocmd")
     filetype plugin indent on
