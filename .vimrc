@@ -43,8 +43,8 @@ nmap <leader>O O<Esc>
 nmap <leader>h :noh<cr>
 
 " Add PDB above current line
-nmap <leader>db Oimport pdb; pdb.set_trace()<Esc>
-nmap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
+nmap <leader>D Oimport ipdb; ipdb.set_trace()<Esc>
+nmap <leader>d oimport ipdb; ipdb.set_trace()<Esc>
 
 " Show tag list
 nmap <leader>t :tselect <C-r><C-w><cr>
