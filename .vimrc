@@ -209,3 +209,6 @@ map <leader>f :FZF -m<cr>
 set tags=tags;/
 
 noremap <leader>E :edit!<cr>
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set title                " change the terminal's title
