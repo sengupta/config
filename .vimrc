@@ -95,6 +95,12 @@ set expandtab
 " 1 tab = 4 spaces
 set shiftwidth=4
 set tabstop=4
+
+" Pathogen
+execute pathogen#infect()
+
+" set autoindent
+" set smartindent
 "
 " Enable filetype plugins
 if has("autocmd")
@@ -107,7 +113,7 @@ autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 " Fold only Python files
-autocmd FileType python setlocal foldmethod=indent
+autocmd FileType python setlocal foldmethod=indent " textwidth=72
 
 " Get backspace to work normally, instead of escaping insert mode and
 " moving backward
