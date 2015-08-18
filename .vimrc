@@ -122,7 +122,7 @@ set backspace=2
 set wildmenu
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*~,*.pyc,*.swp,*.bak
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
