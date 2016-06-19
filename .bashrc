@@ -139,7 +139,7 @@ export PS1='\[\033[01;34m\][\D{%Y-%m-%d} \T]\]\[\033[0m\] \[\033[33m\]${venv}\[\
 # clobbered (like venv)
 if [[ -z "$PATH_SET" ]]
 then
-    export PATH="/Users/sengupta/Dropbox/src/work/aws/eb/macosx/python2.7:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/php5/bin:/usr/local/Cellar/node/0.12.2_1/libexec/npm/bin:${PATH}"
+    export PATH="/Users/sengupta/Dropbox/src/work/aws/eb/macosx/python2.7:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/php5/bin:/usr/local/Cellar/node/0.12.2_1/libexec/npm/bin:${PATH}"
     export PATH_SET="True"
 fi
 
