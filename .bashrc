@@ -97,6 +97,7 @@ alias ghead='git symbolic-ref --short head'
 alias gmoh='git merge origin/$(ghead)' # Merge the remote branch at origin into the local branch
 alias gmuh='git merge upstream/$(ghead)' # Merge the remote branch at upstream into the local branch
 alias gref='git for-each-ref --sort=-committerdate refs/remotes/upstream/' # Show upstream refs sorted by committer date
+alias gbr='git browse'
 
 # Print the path
 alias path='echo -e ${PATH//:/\\n}'
