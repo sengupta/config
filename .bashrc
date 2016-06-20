@@ -165,7 +165,12 @@ alias fr='foreman run'
 # CTRL-T - Paste the selected file path(s) into the command line
 # CTRL-R - Paste the selected command from history into the command line
 
+
 # Exuberant Ctags
+
+# The default OS.X version of ctags does not support the recursive option
+# `--R`, so install this on brew first.
+alias ctags="/usr/local/bin/ctags"
 alias ct="ctags -R --exclude=.git --exclude=design/build --exclude=design/node_modules"
 
 # Because Macs don't have SSH autocomplete:
