@@ -57,6 +57,18 @@ function dj_grep () {
 }
 alias gr=dj_grep
 
+# Search for a pattern in a Git project. MUCH faster than regular Grep
+function git_grep () {
+    git grep -n "$@"
+}
+alias ggr=git_grep
+
+# Open in vim (with vertical splits) all files where the string passed as an
+# argument is present
+function grep_vim () {
+    vim -O `ggr "$@" | awk '{print $1}' | awk -F: '{print $1 " +" $2}'`
+}
+alias vo=grep_vim
 
 # GIT:
 # git checkout using fuzzy branch finder
@@ -85,6 +97,7 @@ gls() {
 alias ga='git add'
 alias gs='git status'
 alias gd='git diff --word-diff=color'
+alias gdt='gd --tool vimdiff'
 alias gc='git commit'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset < %Cgreen%p%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" # Git log basic
 alias gle="git log --graph --pretty=format:'%Cred%h%Creset < %Cgreen%p%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --numstat --summary" # Git log extended
