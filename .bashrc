@@ -210,3 +210,12 @@ alias check="pylint --load-plugins pylint_django --reports=no"
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper.sh
+
+alias rmpyc="find . -name '*.pyc' -exec rm -rf {} \;"
+eval "$(rbenv init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+alias iplocal="ipconfig getifaddr en0"
+alias ipremote="curl icanhazip.com"
