@@ -35,6 +35,9 @@ nmap <leader>A :qa!<cr>
 " Toggle paste mode on and off
 map <leader>p :setlocal paste!<cr>
 
+" Set filetype to Python
+map <leader>P :set filetype=python<cr>
+
 " Add a blank line above and below, respectively
 nmap <leader>o o<Esc>
 nmap <leader>O O<Esc>
@@ -52,13 +55,13 @@ nmap <leader>t :tselect <C-r><C-w><cr>
 " Change two horizontally split windows to vertically split windows
 nmap <leader>H <C-w>t<C-w>H<cr>
 
-" Vertical split vim
+" Split vim windows
+nmap <leader>x :split<cr>
 nmap <leader>v :vsplit<cr>
 
 " Reveal and Close all folds
 nmap <leader>r zR
 nmap <leader>m zM
-
 
 nmap <leader>e :Explore<Esc>
 
@@ -176,6 +179,9 @@ map <leader>s? z=
 
 
 colorscheme koehler
+
+" Move foward in history:
+nnoremap <C-p> <C-i>
 
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
