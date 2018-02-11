@@ -177,7 +177,13 @@ else
 fi
 
 # Using hub (https://github.com/github/hub/)
-alias git=hub
+if [ -e /usr/local/bin/hub ]
+then
+    alias git=hub
+else
+    echo "Hub for Git not available"
+fi
+
 alias fr='foreman run'
 
 # Fuzzy finder
