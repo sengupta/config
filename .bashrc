@@ -240,3 +240,24 @@ alias rmpyc="find . -name '*.pyc' -exec rm -rf {} \;"
 
 alias iplocal="ipconfig getifaddr en0"
 alias ipremote="curl icanhazip.com"
+
+function find_local_ip_by_hostname () {
+    # Find hosts on local network
+    arp -a |\
+    # Pin down the specific host we're looking for
+    grep $@ |\
+    awk '{print $2}' |\
+    sed 's/(//; s/)//'
+}
+
+function ssh_local_hostname () {
+    IP_ADDRESS=$(find_local_ip_by_hostname $@)
+    if [ -z $IP_ADDRESS ]
+    then
+        echo "Could not find $@ on local network"
+    else
+        ssh $IP_ADDRESS
+    fi
+}
+alias lsh=ssh_local_hostname
+
