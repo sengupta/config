@@ -150,24 +150,31 @@ export PS1='\[\033[01;34m\][\D{%Y-%m-%d} \T]\]\[\033[0m\] \[\033[33m\]${venv}\[\
 # This allows us to deal with issues where a program that requires the path set
 # in a specific way for the program to run can run without having its path
 # clobbered (like venv)
+
 if [[ -z "$PATH_SET" ]]
 then
-    export PATH="/Users/sengupta/Dropbox/src/work/aws/eb/macosx/python2.7:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/php5/bin:/usr/local/Cellar/node/0.12.2_1/libexec/npm/bin:${PATH}"
+    # export PATH="/Users/sengupta/.rbenv/bin:/Users/sengupta/Dropbox/src/work/aws/eb/macosx/python2.7:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/opt/openssl/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/php5/bin:/usr/local/Cellar/node/0.12.2_1/libexec/npm/bin:${PATH}"
+    export PATH="~/.rbenv/bin:~/Dropbox/src/work/aws/eb/macosx/python2.7:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/php5/bin:/usr/local/Cellar/node/0.12.2_1/libexec/npm/bin:${PATH}"
     export PATH_SET="True"
 fi
 
 export LANG="en_US.UTF-8"
-export LC_COLLATE="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
-export LC_MESSAGES="en_US.UTF-8"
-export LC_MONETARY="en_US.UTF-8"
-export LC_NUMERIC="en_US.UTF-8"
-export LC_TIME="en_US.UTF-8"
+# export LC_COLLATE="en_US.UTF-8"
+# export LC_CTYPE="en_US.UTF-8"
+# export LC_MESSAGES="en_US.UTF-8"
+# export LC_MONETARY="en_US.UTF-8"
+# export LC_NUMERIC="en_US.UTF-8"
+# export LC_TIME="en_US.UTF-8"
 export LC_ALL=""
 
 export ARCHFLAGS="-arch x86_64"
 
-source ~/.aws_ssh
+if [ -e ~/.aws_ssh ]
+then
+    source ~/.aws_ssh
+else
+    echo "No AWS SSH configuration found"
+fi
 
 # Using hub (https://github.com/github/hub/)
 alias git=hub
@@ -207,15 +214,23 @@ _complete_ssh_hosts ()
 complete -F _complete_ssh_hosts ssh
 
 alias check="pylint --load-plugins pylint_django --reports=no"
+
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]
+then
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper.sh
+else
+    echo "Virtualenv wrapper not available"
+fi
 
 alias rmpyc="find . -name '*.pyc' -exec rm -rf {} \;"
-eval "$(rbenv init -)"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# # Ruby:
+# eval "$(rbenv init -)"
+
+# # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 alias iplocal="ipconfig getifaddr en0"
 alias ipremote="curl icanhazip.com"
