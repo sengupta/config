@@ -267,6 +267,14 @@ __git_ps1_colorize_gitstring ()
 # In this mode you can request colored hints using GIT_PS1_SHOWCOLORHINTS=true
 __git_ps1 ()
 {
+    # We don't want to run all this stuff in our home directory, because that
+    # would kill our CPU
+    if [ $(pwd) = $HOME ]
+    then
+        echo "@HOME"
+        return
+    fi
+
 	local pcmode=no
 	local detached=no
 	local ps1pc_start='\u@\h:\w '
